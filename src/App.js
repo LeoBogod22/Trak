@@ -28,25 +28,22 @@ class App extends Component {
 
 
   handleChange = address => {
-
+        geocodeByAddress(address)
+            .then(res => getLatLng(res[0]))
+      .then(({ lat, lng }) => {
     this.setState({
       address,
-      latitude: null,
-      longitude: null,
-      errorMessage: '',
+      latitude: lat,
+      longitude: lng,
+
     });
-  };
-
-  handleSelect = (address) => {
-    geocodeByAddress(address)
-      .then(results => getLatLng(results[0]))
-      .then(latLng => console.log('Success', latLng))
-      .catch(error => console.error('Error', error))
-
-      this.getUser(); 
-  }
-
-
+  })
+ .catch(error => {
+        this.setState({ isGeocoding: false });
+        console.log('error', error); // eslint-disable-line no-console
+      });
+    
+ }
 
   getUser = selected => {
    
@@ -73,10 +70,11 @@ class App extends Component {
         console.log('error', error); // eslint-disable-line no-console
       });
     
+    console.log(this.state.latitude)
 
 
     if (selected) {
-      axios.get(`https://www.hikingproject.com/data/get-trails?lat={this.state.latitude}&lon=-{this.state.longitude}&maxDistance=10&key=200279581-dd891420fa2c470dbb683b34e017062a`)
+      axios.get(`https://www.hikingproject.com/data/get-trails?lat=${this.state.latitude}&lon=${this.state.longitude}&maxDistance=10&key=200279581-dd891420fa2c470dbb683b34e017062a`)
         .then((res) => {
 
           console.log(res);
