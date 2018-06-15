@@ -3,7 +3,7 @@
 }
 
 .App-header {
-  background-color: #222;
+  background-color: #fff;
   height: 70px;
   padding: 20px;
   color: white;
@@ -14,10 +14,198 @@
 }
 
 
-
-.card {
-  width: 350px;
+.col-sm-6 {
+    float: left;
+    width: 34%;
 }
+#main{
+	    background-color: #414141;
+}
+#trail-list{
+	  display: grid;
+  grid-template-columns: auto auto auto;
+
+
+}
+
+
+
+.b2{
+
+	    font-family: Proxima Nova, Arial, sans-serif;
+    line-height: inherit;
+    text-decoration: none;
+ background: #2B9BD6;
+    font-weight: bold;
+    font-size: 20px;
+    padding: 10px 40px;
+    text-align: center;
+    border: 2px solid #2B9BD6;
+    border-radius: 6px;
+    box-sizing: border-box;
+   
+    -webkit-transition: all .2s;
+    -o-transition: all .2s;
+    transition: all .2s;
+
+}
+.btn {
+    font-family: Proxima Nova, Arial, sans-serif;
+    line-height: inherit;
+    text-decoration: none;
+    color: #2B9BD6;
+    font-weight: bold;
+    font-size: 20px;
+    padding: 10px 40px;
+    text-align: center;
+    border: 2px solid #2B9BD6;
+    border-radius: 6px;
+    box-sizing: border-box;
+    background-color: white;
+    -webkit-transition: all .2s;
+    -o-transition: all .2s;
+    transition: all .2s;
+}
+.line-control{
+color:blue;
+font-size: 49px;
+}
+#textband{
+	    padding-top: 100px;
+	    padding-bottom: 100px;
+}
+#f{
+ background-color: blue;
+        background:  url("ys.jpg") no-repeat center center;
+         margin-bottom: 80px;
+    text-align: center;
+    position: relative;
+    background-position: center;
+    -webkit-background-size: cover;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 750px;
+}
+span {
+    font-family: Museo Sans Rounded, Arial, sans-serif;
+    font-weight: 500;
+    font-size: 5.4rem;
+    line-height: 1.2;
+}
+
+p { color: #adb7bd; font-family: 'Lucida Sans', Arial, sans-serif; font-size: 16px; line-height: 26px; text-indent: 30px; margin: 0; }
+
+
+h1  { font-family: 'Open Sans Condensed', sans-serif; font-size: 48px;     color: rgba(0, 0, 0, 0.58); }
+
+span{
+	
+	    font-family: Museo Sans Rounded, Arial, sans-serif;
+    font-weight: 500;
+    font-size: 3.4rem;
+    line-height: 1.2;
+        position: relative;
+    top: -45px;
+}
+
+#fish{
+
+	color:#fff;
+	font-size: 18px;
+	font-family:monospace;
+}
+#device{
+
+	display: inline-block;
+    margin-top: -100%;
+}
+
+#li {
+    color: #2c3e50;
+    font-size: 1.6em;
+    font-family: monospace;
+    margin-top: 20px;
+    position: relative;
+    top: 120px;
+}
+#banner {
+    margin-bottom: 80px;
+    text-align: center;
+    position: relative;
+    background-position: center;
+    -webkit-background-size: cover;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 750px;
+vertical-align: baseline;
+
+
+ background-image: url('https://cdn-assets.alltrails.com/assets/marketing/know-the-details-home-b04948c759cb5e57c992f83c45dc107d.jpg')
+}
+button {
+display: flex;
+  overflow: hidden;
+  margin: 10px;
+  padding: 12px 12px;
+  cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  transition: all 150ms linear;
+  text-align: center;
+  white-space: nowrap;
+  text-decoration: none !important;
+  text-transform: none;
+  text-transform: capitalize;
+  color: #fff;
+   color: #202129;
+  background-color: #f2f2f2;
+  border: 0 none;
+  border-radius: 4px;
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 1.3;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  justify-content: center;
+  align-items: center;
+  flex: 0 0 160px;
+  box-shadow: 2px 5px 10px var(--color-smoke);
+}
+button:hover {
+  transition: all 150ms linear;
+  opacity: .85;
+}
+button:active {
+  transition: all 150ms linear;
+  opacity: .75;
+}
+button:focus {
+  outline: 1px dotted #959595;
+  outline-offset: -4px;
+}
+
+
+
+
+@media only screen and (min-width : 320px) {
+
+}
+
+/* Extra Small Devices, Phones */ 
+
+
+@media (min-width: 408px) {
+  .card {
+    margin-left: 0;
+    margin-right: 0;
+    width: 50%;
+    position: relative;
+  left:0px;
+  }
+  }
 
 .card-info {
   padding: 1rem;
@@ -70,142 +258,9 @@
 }
 
 body{
-	   background: url("hike.jpg");
-	   background-image-width:100%;
+	  
 }
 
-.Demo__map-maker-icon {
-  color: #FD6C6C;
-}
 
-.Demo__github-icon {
-  font-size: 24px;
-}
 
-.Demo__github-link {
-  color: #262626;
-  font-size: 20px;
-}
 
-.Demo__github-link:hover,
-.Demo__github-link:active {
-  color: #4078c0;
-  text-decoration: none;
-}
-
-.Demo__suggestion-icon {
-  margin-right: 8px;
-}
-
-.Demo__search-bar-container {
-  width: 90%;
-  max-width: 500px;
-  margin: 40px auto 0;
-}
-
-.Demo__search-input-container {
-  position: relative;
-}
-
-.Demo__search-input,
-.Demo__search-input:focus,
-.Demo__search-input:active {
-  box-shadow: 0 2px 2px 0 rgba(0,0,0,0.16), 0 0 0 1px rgba(0,0,0,0.08);
-  border: honeydew;
-  display: block;
-  width: 100%;
-  padding: 16px;
-  font-size: 16px;
-  border-radius: 2px;
-  outline: none;
-}
-
-.Demo__clear-button,
-.Demo__clear-button:active,
-.Demo__clear-button:focus {
-  position: absolute;
-  right: 16px;
-  top: 50%;
-  transform: translateY(-50%);
-  background: transparent;
-  border: none;
-  outline: none;
-  font-weight: 600;
-  color: #999;
-}
-
-.Demo__autocomplete-container {
-  border-bottom: honeydew;
-  border-left: honeydew;
-  border-right: honeydew;
-  border-top: 1px solid #e6e6e6;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
-  border-radius: 0 0 2px 2px;
-}
-
-.Demo__suggestion-item {
-  padding: 8px;
-  text-align: left;
-  background-color: #fff;
-  cursor: pointer;
-}
-
-.Demo__suggestion-item--active {
-  background-color: #fafafa;
-}
-
-.Demo__dropdown-footer {
-  display: flex;
-  justify-content: flex-end;
-  padding: 4px;
-}
-
-.Demo__dropdown-footer-image {
-  display: inline-block;
-  width: 150px;
-}
-
-.Demo__spinner {
-  color: #18bc9c;
-  font-size: 30px;
-}
-
-.Demo__error-message {
-  color: red;
-}
-
-.Demo__geocode-result-header {
-  font-size: 20px;
-  color: #222222;
-}
-
-@media (max-width: 480px) {
-  .autocomplete-container {
-    text-align: left;
-  }
-}
-
-@media (min-width: 768px) {
-  .alert {
-    margin-left: auto;
-    margin-right: auto;
-    width: 50%;
-    -webkit-animation: fadein .75s;
-    -moz-animation: fadein .75s;
-    -ms-animation: fadein .75s;
-    -o-animation: fadein .75s;
-    animation: fadein .75s;
-  }
-
-  .btn {
-    margin-top: 1.5rem;
-  }
-
-  .form-group {
-    display: inline-block;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 5rem;
-    width: 50%;
-  }
-}

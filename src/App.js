@@ -4,8 +4,9 @@ import './App.css';
 import PlacesAutocomplete from 'react-places-autocomplete'
 import { geocodeByAddress, geocodeByPlaceId, getLatLng } from 'react-places-autocomplete'
 import UserForm from "./components/UserForm.js";
-import StarRating from 'react-star-rating';
-
+import Rating from "./components/Rating.js";
+import Main from "./components/main.js";
+import Super from "./components/super.js";
 
 import { classnames } from './components/helpers';
 
@@ -28,6 +29,11 @@ class App extends Component {
 
 
   handleChange = address => {
+   this.setState({
+      address
+
+    });
+
         geocodeByAddress(address)
             .then(res => getLatLng(res[0]))
       .then(({ lat, lng }) => {
@@ -47,8 +53,9 @@ class App extends Component {
 
   getUser = selected => {
    
+var object = this.refs.Progress2;
 
-    document.body.style = 'background: grey;';
+object.innerHTML="";
 
 
  this.setState({ isGeocoding: true, address: selected });
@@ -74,28 +81,37 @@ class App extends Component {
 
 
     if (selected) {
-      axios.get(`https://www.hikingproject.com/data/get-trails?lat=${this.state.latitude}&lon=${this.state.longitude}&maxDistance=10&key=200279581-dd891420fa2c470dbb683b34e017062a`)
+      axios.get(`https://www.hikingproject.com/data/get-trails?lat=${this.state.latitude}&lon=${this.state.longitude}&maxDistance=40&key=200279581-dd891420fa2c470dbb683b34e017062a`)
         .then((res) => {
 
           console.log(res);
           const trailList = res.data.trails.map((trail) => {
             console.log(trail.name)
             console.log(trail.stars)
-            return <div className="card">
-
-                     
+            return <div classname="container-fluid">
+            <div classname="row">
+ 
+                     <div className="col-sm-4 ">
                <div className="card">
-                 <img className="card-img" src={trail.imgMedium} alt="header" />
-                   <div className="card-info">
-        <h1 className="card-title">{trail.name}</h1>
+                
+                   <div className="card-body">
+
+                    <img className="card-img-top" src={trail.imgSmall}  />
+        <h2 className="card-title">{trail.name}</h2>
           <div className="star-rating__ico fa fa-star-o fa-lg">{trail.stars}</div>
+    <br></br>     <br></br>
 
+            <h4 className="card-subtitle">{trail.summary}</h4>
+            <p classname="card-text"> {trail.length} km </p>
+      
 
-            <p className="card-author">{trail.summary}</p>
-            <p classname="length"> {trail.length} km </p>
-            <a href="{trail.link}" className="button">View </a>
+ </div>
+ <br></br>
+ <div> 
+ <button classname="btn"> <a href={trail.url}> View  </a>  </button>
 
-
+      </div>
+            </div>
             </div>
 </div>
             </div>
@@ -138,18 +154,20 @@ class App extends Component {
 
         <div className="App">
           <header className="App-header">
-            <h1 className="App-title">HTTP Calls in React</h1>
+           <a className="navbar-brand" href="#">Trailey</a>
           </header>
 
       
-
-
+<section className="fish">
+<div classname="col-xl-9 mx-auto">
+            <h1 id="mb-5">Find your next favorite trail</h1>
+          </div>
 <PlacesAutocomplete
           onChange={this.handleChange}
           value={this.state.address}
           onSelect={this.getUser}
           onError={this.handleError}
-          shouldFetchSuggestions={this.state.address.length > 2}
+          shouldFetchSuggestions={this.state.address.length >0}
         >
           {({ getInputProps, suggestions, getSuggestionItemProps }) => {
             return (
@@ -201,9 +219,20 @@ class App extends Component {
               </div>
             );
           }}
-        </PlacesAutocomplete>
-          {this.state.isLoaded ? <div>{this.state.trails}</div> : <div>loading data</div>}
 
+        </PlacesAutocomplete>
+          </section>
+          <div classname="f" ref="Progress2">
+          <Main/>
+         
+          <Rating/>
+           <Super/>
+          </div>
+
+
+          <div>
+          {this.state.isLoaded ? <div>{this.state.trails}</div> : <div>.</div>}
+</div>
         </div>
       </div>
     );
