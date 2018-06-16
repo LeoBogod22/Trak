@@ -2,7 +2,7 @@
   "name": "axios-react",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://github.com/LeoBogod22/Trailey-",
+  "homepage": "https://github.com/LeoBogod22/Trak",
   "dependencies": {
     "axios": "^0.18.0",
     "google-map-react": "^1.0.4",
