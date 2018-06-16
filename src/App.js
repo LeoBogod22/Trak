@@ -8,6 +8,9 @@ import Rating from "./components/Rating.js";
 import Main from "./components/main.js";
 import Super from "./components/super.js";
 
+
+import MapContainer from './components/Map.js'
+import Map from './components/Map.js';
 import { classnames } from './components/helpers';
 
 const google = window.google;
@@ -38,7 +41,7 @@ class App extends Component {
             .then(res => getLatLng(res[0]))
       .then(({ lat, lng }) => {
     this.setState({
-      address,
+    
       latitude: lat,
       longitude: lng,
 
@@ -103,6 +106,7 @@ object.innerHTML="";
 
             <h4 className="card-subtitle">{trail.summary}</h4>
             <p classname="card-text"> {trail.length} km </p>
+             <p classname="card-text"> {trail.location}  </p>
       
 
  </div>
@@ -227,7 +231,8 @@ object.innerHTML="";
          
           <Rating/>
            <Super/>
-          </div>
+         <MapContainer google={this.props.google} />
+            </div>
 
 
           <div>

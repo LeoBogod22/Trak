@@ -27,7 +27,7 @@ export default class Rating extends React.Component {
               </div>
 
               <div>
-            <MapContainer google={this.props.google} />
+   
               </div>
             </div>
           </div>

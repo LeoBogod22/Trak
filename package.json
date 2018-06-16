@@ -2,12 +2,16 @@
   "name": "axios-react",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://github.com/LeoBogod22/Trailey-",
   "dependencies": {
     "axios": "^0.18.0",
+    "gh-pages": "^1.2.0",
     "google-map-react": "^1.0.4",
     "google-maps-react": "^2.0.2",
     "react": "^16.3.2",
     "react-dom": "^16.3.2",
+    "react-geolocated": "^2.4.0",
+    "react-geolocation": "^1.0.3",
     "react-google-maps": "^9.4.5",
     "react-places-autocomplete": "^7.1.2",
     "react-scripts": "1.1.4",
@@ -16,6 +20,8 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
   }

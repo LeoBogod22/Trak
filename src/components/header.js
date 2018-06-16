@@ -7,7 +7,7 @@ export default class Header extends React.Component {
 <section id="main">
           <div class="container">
             <div class="content-block no-float">
-              <h2 class="features-header">Browse trails in popular parks</h2>
+              <h1 id="f">Browse trails in popular parks</h1>
             </div>
             <div class="park-section">
               <ul class="trail-list">
